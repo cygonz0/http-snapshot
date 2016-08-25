@@ -41,10 +41,10 @@ function capture(url, fname) {
 	page.evaluate(function(){
 	    document.body.bgColor = 'white';
         });
-	page.render(fname, {format: 'jpeg', quality: '90'});
+	page.render(fname, {format: 'png', quality: '90'});
 	phantom.exit();
     });
 }
 
 capture(system.args[1], system.args[2])
-setTimeout(phantom.exit, 10000);
+setTimeout(phantom.exit, 15000);
