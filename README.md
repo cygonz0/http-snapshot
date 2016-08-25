@@ -1,5 +1,5 @@
 # http-snapshot
-NSE script for Nmap that attempts to take a snapshot of the remote host if it runs a web server.  Based on the original http-screenshot.nse, with fixes included. Requires wkhtmltoimage to be installed and in your path. The OSX wkhtmltoimage installer package is included in this repository.
+NSE script for Nmap that attempts to take a snapshot of the remote host if it runs a web server.  Based on the original SpiderLabs http-screenshot.nse, with fixes included. Requires wkhtmltoimage to be installed and in your path. The OSX wkhtmltoimage installer package is included in this repository.
 ## Installation
 First, install the correct wkhtmltoimage binary for your OS, followed by:
 ```
@@ -33,7 +33,7 @@ Nmap done: 1 IP address (1 host up) scanned in 5.05 seconds
 - Sometimes the script loops forever, could possibly be fixed by using timeouts.
 
 # http-snapshot-pjs
-Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be installed and in your path. 
+Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be installed and in your path. Performance is better with this.
 ## Installation
 ```
 brew install phantomjs
@@ -62,3 +62,5 @@ PORT    STATE SERVICE
 | http-snapshot-pjs:
 |_  Snapshot saved to snap-216.58.199.3:443.png
 ```
+##### Known Issues
+- Sometimes the captured snapshot will be blank.
