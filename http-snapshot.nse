@@ -48,7 +48,7 @@ action = function(host, port)
 	end
 
 	-- Snapshots will be named snap-<IP>:<port>.png
-        local output = "wk-snap-" .. host.ip .. ":" .. port.number .. ".png"
+        local output =  host.ip .. ":" .. port.number .. "-wk.png"
 
 	-- Execute the command using wkhtmltoimage
 	local cmd = "wkhtmltoimage --load-error-handling ignore --quality 50 -q " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
