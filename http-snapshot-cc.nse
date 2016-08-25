@@ -51,7 +51,7 @@ action = function(host, port)
         local output = "cc-snap-" .. host.ip .. ":" .. port.number .. ".png"
 
 	-- Execute the command using CutyCapt
-	local cmd = "CutyCapt --url=" .. protocol .. host.ip .. ":" .. port.number .. " --out=" .. output .. ""
+	local cmd = "CutyCapt --max-wait=15000 --delay=2500 --url=" .. protocol .. host.ip .. ":" .. port.number .. " --out=" .. output .. ""
 	local ret = os.execute(cmd)
 
 	local result = "Completed with errors"
