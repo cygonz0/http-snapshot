@@ -33,6 +33,6 @@ Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be
 ## Installation
 ```
 brew install phantomjs
-wget https://raw.githubusercontent.com/cea-sec/ivre/master/docker/client/screenshot.js
+wget https://raw.githubusercontent.com/v00d00sec/http-snapshot/master/screenshot.js
 cp screenshot.js /usr/local/bin/
 ```
