@@ -48,7 +48,7 @@ action = function(host, port)
 	end
 
 	-- Snapshots will be named snap-<IP>:<port>.png
-        local output = "cutycapt-snap-" .. host.ip .. ":" .. port.number .. ".png"
+        local output = "cc-snap-" .. host.ip .. ":" .. port.number .. ".png"
 
 	-- Execute the command using CutyCapt
 	local cmd = "CutyCapt --url=" .. protocol .. host.ip .. ":" .. port.number .. " --out=" .. output .. ""
@@ -56,7 +56,7 @@ action = function(host, port)
 
 	local result = "Completed with errors"
 
-	if (ret then
+	if ret then
 		result = "Snapshot saved to " .. output
 	end
 
