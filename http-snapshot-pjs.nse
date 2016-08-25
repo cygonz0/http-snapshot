@@ -1,6 +1,8 @@
 description = [[ 
 Attempt to take a snapshot of the remote host if it runs a web server. 
-Based on the original http-screenshot.nse, with fixes included.
+Based on the original http-screenshot.nse, and screenshot.js 
+from IVRE by Pierre LALET <pierre.lalet@cea.fr>
+with fixes included.
 ]]
 
 author = "Jerold H. -- http://v00d00sec.com"
@@ -50,10 +52,9 @@ action = function(host, port)
         local output = "snap-" .. host.ip .. ":" .. port.number .. ".png"
 
 	-- Execute the command wkhtmltoimage
-	local cmd1 = "screenshot.js " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
-	local cmd2 = "wkhtmltoimage --load-error-handling ignore -q " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
+	local cmd = "screenshot.js " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
 	
-	local ret = os.execute(cmd1)
+	local ret = os.execute(cmd)
 
 	local result = "Completed with errors"
 
