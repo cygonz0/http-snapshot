@@ -41,7 +41,7 @@ function capture(url, fname) {
 	page.evaluate(function(){
 	    document.body.bgColor = 'white';
         });
-	page.render(fname, {format: 'png', quality: '90'});
+	page.render(fname);
 	phantom.exit();
     });
 }
