@@ -64,7 +64,8 @@ PORT    STATE SERVICE
 ```
 ##### Known Issues
 - Sometimes the captured snapshot will be blank.
-# http-snapshot-pjs
+
+# http-snapshot-cc
 Requires CutyCapt to be installed and in your $PATH. Performance is better with this.
 ## Installation
 ```
