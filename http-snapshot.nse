@@ -57,7 +57,7 @@ action = function(host, port)
 	local result = "Completed with errors"
 
 	if ret then
-		result = "Screenshot saved to " .. output
+		result = "Snapshot saved to " .. output
 	end
 
 	-- Return the output message
