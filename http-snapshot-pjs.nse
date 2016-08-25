@@ -1,6 +1,6 @@
 description = [[ 
 Attempt to take a snapshot of the remote host if it runs a web server. 
-Based on the original http-screenshot.nse, and screenshot.js 
+Based on the original SpiderLabs http-screenshot.nse, and screenshot.js 
 from IVRE by Pierre LALET <pierre.lalet@cea.fr>
 with fixes included.
 ]]
