@@ -9,7 +9,7 @@ nmap --script-updatedb
 ```
 ## Usage
 ```
-nmap --script=http-snapshot -p80,443 google.vn
+nmap -sV --script=http-snapshot -p80,443 google.vn
 ```
 ## Sample Output
 ```
@@ -45,7 +45,7 @@ nmap --script-updatedb
 ```
 ## Usage
 ```
-nmap --script=http-snapshot-pjs -p80,443 google.vn
+nmap -sV --script=http-snapshot-pjs -p80,443 google.vn
 ```
 ## Sample Output
 ```
@@ -64,3 +64,37 @@ PORT    STATE SERVICE
 ```
 ##### Known Issues
 - Sometimes the captured snapshot will be blank.
+# http-snapshot-pjs
+Requires CutyCapt to be installed and in your $PATH. Performance is better with this.
+## Installation
+```
+brew install Cuty_Capt
+wget https://raw.githubusercontent.com/v00d00sec/http-snapshot/master/http-snapshot-cc.nse
+cp http-snapshot-cc.nse /usr/local/share/nmap/scripts/
+nmap --script-updatedb
+```
+## Usage
+```
+nmap -sV --script=http-snapshot-cc -p80,443 google.vn
+```
+## Sample Output
+```
+Starting Nmap 7.12 ( https://nmap.org ) at 2016-08-25 16:16 ICT
+Nmap scan report for google.vn (216.58.199.3)
+Host is up (0.00074s latency).
+Other addresses for google.vn (not scanned): 2404:6800:4005:802::2003
+rDNS record for 216.58.199.3: hkg12s02-in-f3.1e100.net
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+| http-snapshot-cc:
+|_  Snapshot saved to cc-snap-216.58.199.3:80.png
+443/tcp open  https
+| http-snapshot-cc:
+|_  Completed with errors
+
+Nmap done: 1 IP address (1 host up) scanned in 58.56 seconds
+```
+##### Known Issues
+- Sometimes the script will hang on HTTPS ports
+
