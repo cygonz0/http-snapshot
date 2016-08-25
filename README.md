@@ -33,7 +33,7 @@ Nmap done: 1 IP address (1 host up) scanned in 5.05 seconds
 - Sometimes the script loops forever, could possibly be fixed by using timeouts.
 
 # http-snapshot-pjs
-Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be installed and in your path. Performance is better with this.
+Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be installed and in your path.
 ## Installation
 ```
 brew install phantomjs
@@ -66,7 +66,7 @@ PORT    STATE SERVICE
 - Sometimes the captured snapshot will be blank.
 
 # http-snapshot-cc
-Requires CutyCapt to be installed and in your $PATH. Performance is better with this.
+Requires CutyCapt to be installed and in your $PATH.
 ## Installation
 ```
 brew install Cuty_Capt
