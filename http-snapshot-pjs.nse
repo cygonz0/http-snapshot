@@ -51,7 +51,7 @@ action = function(host, port)
 	-- Snapshots will be named snap-<IP>:<port>.png
         local output = "snap-" .. host.ip .. ":" .. port.number .. ".png"
 
-	-- Execute the command wkhtmltoimage
+	-- Execute the command using screenshot.js via PhamtomJS
 	local cmd = "screenshot.js " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
 	
 	local ret = os.execute(cmd)
