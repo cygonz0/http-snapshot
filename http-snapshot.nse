@@ -50,7 +50,7 @@ action = function(host, port)
         local output = "snap-" .. host.ip .. ":" .. port.number .. ".png"
 
 	-- Execute the command wkhtmltoimage
-	local cmd = "wkhtmltoimage --load-error-handling ignore " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
+	local cmd = "wkhtmltoimage --load-error-handling ignore -q " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
 	
 	local ret = os.execute(cmd)
 
