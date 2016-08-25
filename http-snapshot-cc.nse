@@ -48,7 +48,7 @@ action = function(host, port)
 	end
 
 	-- Snapshots will be named snap-<IP>:<port>.png
-        local output = "cc-snap-" .. host.ip .. ":" .. port.number .. ".png"
+        local output =  host.ip .. ":" .. port.number .. "-cc.png"
 
 	-- Execute the command using CutyCapt
 	local cmd = "CutyCapt --max-wait=5000 --delay=2500 --url=" .. protocol .. host.ip .. ":" .. port.number .. " --out=" .. output .. ""
