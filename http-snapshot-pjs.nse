@@ -49,7 +49,7 @@ action = function(host, port)
 	end
 
 	-- Snapshots will be named snap-<IP>:<port>.png
-        local output = "snap-" .. host.ip .. ":" .. port.number .. ".png"
+        local output = "pjs-snap-" .. host.ip .. ":" .. port.number .. ".png"
 
 	-- Execute the command using screenshot.js via PhamtomJS
 	local cmd = "screenshot.js " .. protocol .. host.ip .. ":" .. port.number .. " " .. output .. ""
