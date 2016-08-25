@@ -28,6 +28,10 @@ PORT    STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 5.05 seconds
 ```
+##### Known Issues
+- If the site redirects from HTTP to HTTPS or any 301 code is received, the captured snapshot will be blank. It is a known issue with wkhtmltoimage. 
+- Sometimes the script loops forever, could possibly be fixed by using timeouts.
+
 # http-snapshot-pjs
 Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be installed and in your path. 
 ## Installation
@@ -45,18 +49,16 @@ nmap --script=http-snapshot-pjs -p80,443 google.vn
 ```
 ## Sample Output
 ```
-Starting Nmap 7.12 ( https://nmap.org ) at 2016-08-25 09:43 ICT
+Starting Nmap 7.12 ( https://nmap.org ) at 2016-08-25 11:53 ICT
 Nmap scan report for google.vn (216.58.199.3)
-Host is up (0.00045s latency).
-Other addresses for google.vn (not scanned): 2404:6800:4005:801::2003
+Host is up (0.00055s latency).
+Other addresses for google.vn (not scanned): 2404:6800:4005:802::2003
 rDNS record for 216.58.199.3: hkg12s02-in-f3.1e100.net
 PORT    STATE SERVICE
 80/tcp  open  http
-| http-snapshot:
+| http-snapshot-pjs:
 |_  Snapshot saved to snap-216.58.199.3:80.png
 443/tcp open  https
-| http-snapshot:
+| http-snapshot-pjs:
 |_  Snapshot saved to snap-216.58.199.3:443.png
-
-Nmap done: 1 IP address (1 host up) scanned in 5.05 seconds
 ```
