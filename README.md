@@ -28,3 +28,11 @@ PORT    STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 5.05 seconds
 ```
+# http-snapshot-pjs
+Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be installed and in your path. 
+## Installation
+```
+brew install phantomjs
+wget https://raw.githubusercontent.com/cea-sec/ivre/master/docker/client/screenshot.js
+cp screenshot.js /usr/local/bin/
+```
