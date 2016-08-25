@@ -1,6 +1,7 @@
 description = [[ 
 Attempt to take a snapshot of the remote host if it runs a web server. 
-Based on the original http-screenshot.nse, with fixes included.
+Based on the SpiderLabs original http-screenshot.nse, 
+with fixes included.
 ]]
 
 author = "Jerold H. -- http://v00d00sec.com"
