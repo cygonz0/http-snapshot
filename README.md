@@ -34,5 +34,29 @@ Requires phantomjs and screenshot.js by Pierre LALET <pierre.lalet@cea.fr> to be
 ```
 brew install phantomjs
 wget https://raw.githubusercontent.com/v00d00sec/http-snapshot/master/screenshot.js
+wget https://raw.githubusercontent.com/v00d00sec/http-snapshot/master/http-snapshot-pjs.nse
 cp screenshot.js /usr/local/bin/
+cp http-snapshot-pjs.nse /usr/local/share/nmap/scripts/
+nmap --script-updatedb
+```
+## Usage
+```
+nmap --script=http-snapshot-pjs -p80,443 google.vn
+```
+## Sample Output
+```
+Starting Nmap 7.12 ( https://nmap.org ) at 2016-08-25 09:43 ICT
+Nmap scan report for google.vn (216.58.199.3)
+Host is up (0.00045s latency).
+Other addresses for google.vn (not scanned): 2404:6800:4005:801::2003
+rDNS record for 216.58.199.3: hkg12s02-in-f3.1e100.net
+PORT    STATE SERVICE
+80/tcp  open  http
+| http-snapshot:
+|_  Snapshot saved to snap-216.58.199.3:80.png
+443/tcp open  https
+| http-snapshot:
+|_  Snapshot saved to snap-216.58.199.3:443.png
+
+Nmap done: 1 IP address (1 host up) scanned in 5.05 seconds
 ```
