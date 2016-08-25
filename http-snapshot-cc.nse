@@ -1,6 +1,7 @@
 description = [[ 
 Attempt to take a snapshot of the remote host if it runs a web server. 
-Based on the original http-screenshot.nse, with fixes included.
+Based on the original SpiderLabs http-screenshot.nse. Requires CutyCapt,
+with fixes included.
 ]]
 
 author = "Jerold H. -- http://v00d00sec.com"
@@ -47,18 +48,16 @@ action = function(host, port)
 	end
 
 	-- Snapshots will be named snap-<IP>:<port>.png
-        local output1 = "pjs-snap-" .. host.ip .. ":" .. port.number .. ".jpeg"
-        local output2 = "wkhtmltoimage-snap-" .. host.ip .. ":" .. port.number .. ".png"
-        local output3 = "cutycapt-snap-" .. host.ip .. ":" .. port.number .. ".png"
+        local output = "cutycapt-snap-" .. host.ip .. ":" .. port.number .. ".png"
 
 	-- Execute the command using CutyCapt
-	local cmd = "CutyCapt --url=" .. protocol .. host.ip .. ":" .. port.number .. " --out=" .. output3 .. ""
+	local cmd = "CutyCapt --url=" .. protocol .. host.ip .. ":" .. port.number .. " --out=" .. output .. ""
 	local ret = os.execute(cmd)
 
 	local result = "Completed with errors"
 
 	if (ret then
-		result = "Snapshot saved to " .. output1
+		result = "Snapshot saved to " .. output
 	end
 
 	-- Return the output message
